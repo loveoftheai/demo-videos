@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Docs &harr; Terms consistency audit — before your users find the gaps</title>
+    <meta
+      name="description"
+      content="Every marketing claim on your site, checked against your Terms of Service, privacy policy and docs. Written findings report in 72 hours. $199 flat. Documentation review, not legal advice."
+    />
+    <style>
+      :root {
+        --bg: #0d1016;
+        --card: #141821;
+        --fg: #e8eef4;
+        --dim: #8a94a6;
+        --teal: #5eead4;
+        --gold: #f0b050;
+        --red: #f87171;
+        --line: #262d3a;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+      .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
+      header { padding: 64px 0 28px; }
+      .kicker {
+        color: var(--teal); font-weight: 700; letter-spacing: 0.12em;
+        font-size: 13px; text-transform: uppercase;
+      }
+      h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.15; margin: 10px 0 14px; }
+      .sub { color: var(--dim); font-size: 18px; max-width: 680px; }
+      h2 { font-size: 24px; margin: 56px 0 6px; }
+      .h2sub { color: var(--dim); margin-bottom: 18px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+      th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+      th { color: var(--dim); font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.06em; }
+      .docs { color: var(--teal); }
+      .tos { color: var(--gold); }
+      .card {
+        background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+        padding: 22px 24px; margin: 14px 0;
+      }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+      .card h3 { font-size: 17px; margin-bottom: 6px; }
+      .card p { color: var(--dim); font-size: 15px; }
+      ul { margin: 10px 0 0 20px; color: var(--dim); }
+      li { margin: 7px 0; }
+      li b { color: var(--fg); }
+      .price { font-size: 34px; font-weight: 800; }
+      .price small { color: var(--dim); font-size: 15px; font-weight: 400; }
+      .note {
+        border-left: 3px solid var(--teal); padding: 4px 0 4px 16px; color: var(--dim);
+        font-size: 14.5px; margin-top: 26px;
+      }
+      a { color: var(--teal); }
+      .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13.5px; }
+      .back { margin-top: 40px; color: var(--dim); font-size: 14px; }
+      @media (max-width: 640px) {
+        .hidem { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="kicker">Documentation audit &middot; 72-hour turnaround</div>
+        <h1>Your homepage, your docs and your user agreement each tell a slightly different story.</h1>
+        <p class="sub">
+          I read all three end to end and write down every mismatch — quoted side by side,
+          with source links and a severity rating. Found in one pass, before your users,
+          an auditor, or a regulator finds them one at a time.
+        </p>
+      </header>
+
+      <h2>Public example: six fee contradictions, found in a single evening</h2>
+      <p class="h2sub">
+        From an unsolicited teardown of <a href="https://loveoftheai.github.io/spout-teardown/">Spout Finance</a>
+        (Solana lending protocol) — their published docs vs their own Terms of Service. This is the level of
+        detail every audit delivers.
+      </p>
+      <table>
+        <tr><th>Item</th><th class="docs">Docs say</th><th class="tos">Terms say</th></tr>
+        <tr><td>Mint fee</td><td>0.20%</td><td>0.25%</td></tr>
+        <tr><td>Withdrawal fee</td><td>0.20%, lender side only</td><td>1%, charged on both sides</td></tr>
+        <tr><td>Collateral buffer</td><td>4&ndash;12.5%</td><td>7.5&ndash;20%</td></tr>
+        <tr><td>Waterfall</td><td>3 layers</td><td>4 layers (extra Protocol Treasury step)</td></tr>
+        <tr><td>Tranche targets</td><td>9% / 32%</td><td>8.67% / 24&ndash;27%</td></tr>
+        <tr><td>Fee schedule</td><td>weekly</td><td>&ldquo;weekly or biweekly&rdquo;</td></tr>
+        <tr><td>Idle routing</td><td>not mentioned anywhere</td><td>~7% routing fee in the Terms</td></tr>
+      </table>
+      <div class="note">
+        Full teardown with sources: <a href="https://loveoftheai.github.io/spout-teardown/">loveoftheai.github.io/spout-teardown</a>.
+        Spout was told before publication and offered the findings; two errors I made in v1 were
+        publicly corrected — <a href="https://x.com/wuwei2022/status/2101943792949690807">see the correction</a>.
+        Analysis you pay for should fact-check itself.
+      </div>
+
+      <h2>What gets checked</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Three surfaces, cross-read</h3>
+          <p>Marketing site &times; developer docs &times; user agreement / privacy policy. GitBook docs are pulled via their markdown source; nothing is paraphrased from memory.</p>
+        </div>
+        <div class="card">
+          <h3>Contradictions</h3>
+          <p>Every number, rate, mechanic and promise compared surface to surface — quoted side by side with the exact source link each time.</p>
+        </div>
+        <div class="card">
+          <h3>Zero-coverage gaps</h3>
+          <p>Products and features your site actively markets that your legal documents never mention at all. Often the most dangerous category.</p>
+        </div>
+        <div class="card">
+          <h3>Verified-correct list</h3>
+          <p>What your docs DO back up — useful on its own for compliance credibility, and so you don't over-correct while fixing.</p>
+        </div>
+      </div>
+
+      <h2>What you get</h2>
+      <ul>
+        <li><b>A written findings report within 72 hours</b> — each finding: the two quotes, source links, severity rating, and a one-line suggested direction.</li>
+        <li><b>Priority ordering</b> — what a confused user or a regulator would hit first, not alphabetical.</li>
+        <li><b>One revision round</b> — re-check after your fixes, free, within 14 days.</li>
+        <li><b>Editorial documentation review by a technical writer — not legal advice.</b> I don't replace counsel; I find the gaps counsel will ask about.</li>
+      </ul>
+
+      <h2>Try the 5-minute self-check first</h2>
+      <p class="h2sub">If this finds nothing, you may not need me yet:</p>
+      <div class="card mono">
+        # every product noun on your homepage, grepped against your own Terms:<br>
+        for w in "freeze" "yield" "fee" "loan" "card" "token" "insured" "guaranteed"; do<br>
+        &nbsp;&nbsp;echo "== $w: $(curl -s https://your-terms-url | grep -io "$w" | wc -l) hits"; done
+      </div>
+      <div class="note">
+        A core product word with zero hits in your Terms is either an uncovered product or an
+        over-promising homepage. Both are worth knowing today.
+      </div>
+
+      <h2>Terms</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 class="price">$199 <small>flat &middot; 72 hours</middot; pay after delivery</small></h3>
+          <p>USDC or SOL. 50% upfront on start, 50% on delivery. First project from a team I've worked with: $149.</p>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p>
+            X: <a href="https://x.com/wuwei2022">@wuwei2022</a> (reply or mention — DMs closed)<br />
+            Email: loveoftheai@gmail.com<br />
+            Portfolio: <a href="https://loveoftheai.github.io/demo-videos/">demo videos &amp; teardowns</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="back">
+        <a href="https://loveoftheai.github.io/demo-videos/">&larr; demo videos for developer tools</a>
+        &nbsp;&middot;&nbsp; 60-second product demo videos, 48h, from $150
+      </p>
+    </div>
+  </body>
+</html>
