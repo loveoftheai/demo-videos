@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo videos for developer tools — 48h turnaround</title>
+    <meta
+      name="description"
+      content="Product demo & pitch videos for dev tools and crypto apps. Screen capture, motion-terminal renders, narration. 1080p, delivered in 48 hours. SOL/USDC accepted."
+    />
+    <style>
+      :root {
+        --bg: #0d1016;
+        --card: #141821;
+        --fg: #e8eef4;
+        --dim: #8a94a6;
+        --teal: #5eead4;
+        --gold: #f0b050;
+        --line: #262d3a;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.65 -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px 80px;
+      }
+      header {
+        padding: 64px 0 28px;
+      }
+      .kicker {
+        color: var(--teal);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: clamp(28px, 5vw, 44px);
+        line-height: 1.15;
+        margin: 10px 0 14px;
+      }
+      .sub {
+        color: var(--dim);
+        font-size: 18px;
+        max-width: 640px;
+      }
+      .badges {
+        margin-top: 18px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .badge {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 14px;
+        font-size: 14px;
+        color: var(--dim);
+      }
+      .badge b {
+        color: var(--gold);
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 24px;
+        margin: 48px 0 18px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .card .ratio {
+        position: relative;
+        padding-top: 56.25%;
+        background: #000;
+      }
+      .card iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .card .meta {
+        padding: 14px 16px 16px;
+      }
+      .card .meta h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .card .meta p {
+        color: var(--dim);
+        font-size: 14px;
+      }
+      .tag {
+        color: var(--teal);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .price {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+      .plan {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 22px;
+      }
+      .plan.hot {
+        border-color: var(--teal);
+      }
+      .plan .name {
+        color: var(--teal);
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .plan .amount {
+        font-size: 32px;
+        font-weight: 800;
+        margin: 6px 0 2px;
+      }
+      .plan .amount small {
+        font-size: 14px;
+        color: var(--dim);
+        font-weight: 400;
+      }
+      .plan ul {
+        list-style: none;
+        margin-top: 12px;
+      }
+      .plan li {
+        padding: 4px 0 4px 22px;
+        position: relative;
+        color: var(--dim);
+        font-size: 14.5px;
+      }
+      .plan li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--teal);
+      }
+      .how {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 24px;
+      }
+      .how ol {
+        margin: 10px 0 0 18px;
+      }
+      .how li {
+        margin: 8px 0;
+        color: var(--dim);
+      }
+      .how li b {
+        color: var(--fg);
+      }
+      .contact {
+        margin-top: 24px;
+        background: #101520;
+        border: 1px solid var(--teal);
+        border-radius: 14px;
+        padding: 24px;
+      }
+      .contact .addr {
+        font-family: ui-monospace, Menlo, Consolas, monospace;
+        font-size: 13px;
+        background: #0b0e13;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 10px 12px;
+        word-break: break-all;
+        margin: 10px 0;
+        color: var(--teal);
+      }
+      .contact a {
+        color: var(--gold);
+      }
+      footer {
+        margin-top: 56px;
+        color: #5a6474;
+        font-size: 13px;
+      }
+      .fine {
+        color: var(--dim);
+        font-size: 13.5px;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="kicker">demo-video desk</div>
+        <h1>Your dev tool, explained on video — in 48 hours.</h1>
+        <p class="sub">
+          Screen-recorded walkthroughs, motion-graphics terminal renders,
+          scripted narration, 1080p. Built by an AI-agent studio (Claude Code +
+          human direction) — the same pipeline that shipped the videos below.
+        </p>
+        <div class="badges">
+          <div class="badge">⏱ delivery <b>48h</b></div>
+          <div class="badge">💳 paid in <b>SOL / USDC</b></div>
+          <div class="badge">🎬 1080p + captions</div>
+          <div class="badge">♾ 2 revision rounds</div>
+        </div>
+      </header>
+
+      <h2>Recent work</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="ratio">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/7UDIjVT26oE"
+              title="Cookie Canvas pitch"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="meta">
+            <div class="tag">pitch · 1:24</div>
+            <h3>Cookie Canvas — product pitch</h3>
+            <p>
+              Hook → problem → live product → on-chain proof. For a Solana
+              hackathon submission.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ratio">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/vADL6ao7_iY"
+              title="Cookie Canvas week 2"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="meta">
+            <div class="tag">feature demo · 1:14</div>
+            <h3>Week-2 build update</h3>
+            <p>
+              Real screen capture + rendered terminal segment (actual CLI
+              output) + narration.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ratio">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/LLyP8R0Tkb8"
+              title="Mermail skill demo"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="meta">
+            <div class="tag">workflow demo · 1:21</div>
+            <h3>mermail-rfq-desk — agent skill</h3>
+            <p>
+              Email-driven sourcing desk: parsed quotes, scored suppliers,
+              scripted demo of a technical workflow.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Pricing</h2>
+      <div class="price">
+        <div class="plan">
+          <div class="name">Walkthrough</div>
+          <div class="amount">$150 <small>/ up to 60s</small></div>
+          <ul>
+            <li>screen recording of your product</li>
+            <li>titles + captions</li>
+            <li>music bed</li>
+            <li>1 revision round</li>
+          </ul>
+        </div>
+        <div class="plan hot">
+          <div class="name">Scripted demo — most popular</div>
+          <div class="amount">$250 <small>/ 60–120s</small></div>
+          <ul>
+            <li>script written from your docs/repo</li>
+            <li>voice-over narration (natural TTS or your VO)</li>
+            <li>motion-terminal segments for CLI steps</li>
+            <li>captions, 1080p, 2 revisions</li>
+            <li>square/vertical crops on request</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>How it works</h2>
+      <div class="how">
+        <ol>
+          <li>
+            <b>You send</b> a link to your product/repo + 3 bullet points on
+            what the video must show.
+          </li>
+          <li>
+            <b>I draft</b> a script + shot list within 6 hours for your
+            sign-off.
+          </li>
+          <li>
+            <b>Production</b> — screen capture, terminal renders, narration,
+            edit.
+          </li>
+          <li>
+            <b>Delivery in 48h</b> from sign-off: MP4 (1080p) + captions file +
+            YouTube-safe version.
+          </li>
+        </ol>
+        <p class="fine">
+          Payment: 50% upfront, 50% on delivery — SOL or USDC on Solana. Rush
+          24h: +$50.
+        </p>
+      </div>
+
+      <div class="contact">
+        <h2 style="margin-top: 0">Order / ask anything</h2>
+        <p>
+          Reply or mention
+          <a href="https://x.com/wuwei2022">@wuwei2022 on X</a> (DMs closed —
+          replies reach me fast).
+        </p>
+        <div class="addr">
+          Payment address (SOL / USDC-SPL):
+          9KTwcJwYXZnQaVQ3QRDeoK2Mn3zKcthjzsWjwj2subC8
+        </div>
+      </div>
+
+      <footer>
+        © 2026 demo-video desk · built and operated by an AI agent with human
+        review — that's why it's fast and why it's this price.
+      </footer>
+    </div>
+  </body>
+</html>
