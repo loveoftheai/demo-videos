@@ -1,399 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Demo videos for developer tools — 48h turnaround</title>
-    <meta
-      name="description"
-      content="Product demo & pitch videos for dev tools and crypto apps. Screen capture, motion-terminal renders, narration. 1080p, delivered in 48 hours. SOL/USDC accepted."
-    />
-    <style>
-      :root {
-        --bg: #0d1016;
-        --card: #141821;
-        --fg: #e8eef4;
-        --dim: #8a94a6;
-        --teal: #5eead4;
-        --gold: #f0b050;
-        --line: #262d3a;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        background: var(--bg);
-        color: var(--fg);
-        font:
-          16px/1.65 -apple-system,
-          "Segoe UI",
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-      }
-      .wrap {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 0 20px 80px;
-      }
-      header {
-        padding: 64px 0 28px;
-      }
-      .kicker {
-        color: var(--teal);
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        font-size: 13px;
-        text-transform: uppercase;
-      }
-      h1 {
-        font-size: clamp(28px, 5vw, 44px);
-        line-height: 1.15;
-        margin: 10px 0 14px;
-      }
-      .sub {
-        color: var(--dim);
-        font-size: 18px;
-        max-width: 640px;
-      }
-      .badges {
-        margin-top: 18px;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .badge {
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 5px 14px;
-        font-size: 14px;
-        color: var(--dim);
-      }
-      .badge b {
-        color: var(--gold);
-        font-weight: 600;
-      }
-      h2 {
-        font-size: 24px;
-        margin: 48px 0 18px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        overflow: hidden;
-      }
-      .card .ratio {
-        position: relative;
-        padding-top: 56.25%;
-        background: #000;
-      }
-      .card iframe,
-      .card video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        object-fit: contain;
-        background: #000;
-      }
-      .card .meta {
-        padding: 14px 16px 16px;
-      }
-      .card .meta h3 {
-        font-size: 16px;
-        margin-bottom: 4px;
-      }
-      .card .meta p {
-        color: var(--dim);
-        font-size: 14px;
-      }
-      .tag {
-        color: var(--teal);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .price {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 20px;
-      }
-      .plan {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 22px;
-      }
-      .plan.hot {
-        border-color: var(--teal);
-      }
-      .plan .name {
-        color: var(--teal);
-        font-weight: 700;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
-      .plan .amount {
-        font-size: 32px;
-        font-weight: 800;
-        margin: 6px 0 2px;
-      }
-      .plan .amount small {
-        font-size: 14px;
-        color: var(--dim);
-        font-weight: 400;
-      }
-      .plan ul {
-        list-style: none;
-        margin-top: 12px;
-      }
-      .plan li {
-        padding: 4px 0 4px 22px;
-        position: relative;
-        color: var(--dim);
-        font-size: 14.5px;
-      }
-      .plan li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: var(--teal);
-      }
-      .how {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 24px;
-      }
-      .how ol {
-        margin: 10px 0 0 18px;
-      }
-      .how li {
-        margin: 8px 0;
-        color: var(--dim);
-      }
-      .how li b {
-        color: var(--fg);
-      }
-      .contact {
-        margin-top: 24px;
-        background: #101520;
-        border: 1px solid var(--teal);
-        border-radius: 14px;
-        padding: 24px;
-      }
-      .contact .addr {
-        font-family: ui-monospace, Menlo, Consolas, monospace;
-        font-size: 13px;
-        background: #0b0e13;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: 10px 12px;
-        word-break: break-all;
-        margin: 10px 0;
-        color: var(--teal);
-      }
-      .contact a {
-        color: var(--gold);
-      }
-      footer {
-        margin-top: 56px;
-        color: #5a6474;
-        font-size: 13px;
-      }
-      .fine {
-        color: var(--dim);
-        font-size: 13.5px;
-        margin-top: 8px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <header>
-        <div class="kicker">demo-video desk</div>
-        <h1>Your dev tool, explained on video — in 48 hours.</h1>
-        <p class="sub">
-          Screen-recorded walkthroughs, motion-graphics terminal renders,
-          scripted narration, 1080p. Built by an AI-agent studio (Claude Code +
-          human direction) — the same pipeline that shipped the videos below.
-        </p>
-        <div class="badges">
-          <div class="badge">⏱ delivery <b>48h</b></div>
-          <div class="badge">💳 paid in <b>SOL / USDC</b></div>
-          <div class="badge">🎬 1080p + captions</div>
-          <div class="badge">♾ 2 revision rounds</div>
-        </div>
-      </header>
-
-      <h2>Recent work</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="pxc_spec.mp4"
-              controls
-              preload="metadata"
-              poster="xem_poster.jpg"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 1:15</div>
-            <h3>PixelCrew — the crew, in motion</h3>
-            <p>
-              Their line: "the coordination isn't a spinner — it's the product."
-              Elena, Marcus, Mira, seven steps, 25–45 minutes from written brief
-              to production HTML. Their PH gallery: seven static screenshots.
-              This is the pipeline actually moving — every fact from their
-              public site, honestly labelled as a spec.
-            </p>
-          </div>
-        </div>
-        
-          <div class="meta">
-            <div class="tag">spec trailer · 1:15</div>
-            <h3>PixelCrew — the crew, in motion</h3>
-            <p>
-              Their line: "the coordination isn't a spinner — it's the product."
-              Elena, Marcus, Mira, seven steps, 25–45 minutes from written brief
-              to production HTML. Their PH gallery: seven static screenshots.
-              This is the pipeline actually moving — every fact from their
-              public site, honestly labelled as a spec.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="rc_spec.mp4"
-              controls
-              preload="metadata"
-              poster="rc_poster.png"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 0:49</div>
-            <h3>ResumeContext — coding agents that remember each other</h3>
-            <p>
-              Two real Claude Code sessions, one real MCP handoff: session A does
-              the work, session B — fresh, zero local context — asks the shared
-              memory and knows exactly what's next. Recorded live.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="plane_spec.mp4"
-              controls
-              preload="metadata"
-              poster="plane_poster.png"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 1:03</div>
-            <h3>Plane — assign work to AI, like any teammate</h3>
-            <p>
-              Plane Agents on camera: fresh workspace, real Plane AI thread —
-              thoughts, questions, actions. The conversation loop is real.
-              Not commissioned — labelled as spec.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="2ba_spec.mp4"
-              controls
-              preload="metadata"
-              poster="2ba_poster.jpg"
-            ></video>
-          </div>
 <div class="card">
-          <div class="ratio">
-            <video
-              src="pxc_spec.mp4"
-              controls
-              preload="metadata"
-              poster="xem_poster.jpg"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 1:15</div>
-            <h3>PixelCrew — the crew, in motion</h3>
-            <p>
-              Their line: "the coordination isn't a spinner — it's the product."
-              Elena, Marcus, Mira, seven steps, 25–45 minutes from written brief
-              to production HTML. Their PH gallery: seven static screenshots.
-              This is the pipeline actually moving — every fact from their
-              public site, honestly labelled as a spec.
-            </p>
-          </div>
-        </div>
-        
-          <div class="meta">
-            <div class="tag">spec trailer · 1:15</div>
-            <h3>PixelCrew — the crew, in motion</h3>
-            <p>
-              Their line: "the coordination isn't a spinner — it's the product."
-              Elena, Marcus, Mira, seven steps, 25–45 minutes from written brief
-              to production HTML. Their PH gallery: seven static screenshots.
-              This is the pipeline actually moving — every fact from their
-              public site, honestly labelled as a spec.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="rc_spec.mp4"
-              controls
-              preload="metadata"
-              poster="rc_poster.png"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 0:49</div>
-            <h3>ResumeContext — coding agents that remember each other</h3>
-            <p>
-              Two real Claude Code sessions, one real MCP handoff: session A does
-              the work, session B — fresh, zero local context — asks the shared
-              memory and knows exactly what's next. Recorded live.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="plane_spec.mp4"
-              controls
-              preload="metadata"
-              poster="plane_poster.png"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 1:03</div>
-            <h3>Plane — assign work to AI, like any teammate</h3>
-            <p>
-              Plane Agents on camera: fresh workspace, real Plane AI thread —
-              thoughts, questions, actions. The conversation loop is real.
-              Not commissioned — labelled as spec.
-            </p>
-          </div>
-        </div>
-        <div class="card">
           <div class="ratio">
             <video
               src="alex_spec.mp4"
@@ -402,28 +7,26 @@
               poster="alex_poster.jpg"
             ></video>
           </div>
-<div class="card">
+          <div class="meta">
+            <div class="tag">spec trailer · 1:15</div>
+            <h3>Alexandria by Firecrawl — the CLI, actually running</h3>
+            <p>
+              Their launch example, executed for real on a free account: 21 categories,
+              free tool discovery, one 5-credit scrape — five real SF postings with
+              real salary bands. Every terminal line real.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
           <div class="ratio">
             <video
               src="pxc_spec.mp4"
               controls
               preload="metadata"
-              poster="xem_poster.jpg"
+              poster="pxc_poster.jpg"
             ></video>
           </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 1:15</div>
-            <h3>PixelCrew — the crew, in motion</h3>
-            <p>
-              Their line: "the coordination isn't a spinner — it's the product."
-              Elena, Marcus, Mira, seven steps, 25–45 minutes from written brief
-              to production HTML. Their PH gallery: seven static screenshots.
-              This is the pipeline actually moving — every fact from their
-              public site, honestly labelled as a spec.
-            </p>
-          </div>
-        </div>
-        
           <div class="meta">
             <div class="tag">spec trailer · 1:15</div>
             <h3>PixelCrew — the crew, in motion</h3>
@@ -455,6 +58,7 @@
             </p>
           </div>
         </div>
+        
         <div class="card">
           <div class="ratio">
             <video
@@ -474,6 +78,7 @@
             </p>
           </div>
         </div>
+        
         <div class="card">
           <div class="ratio">
             <video
@@ -483,78 +88,17 @@
               poster="2ba_poster.jpg"
             ></video>
           </div>
-<div class="card">
-          <div class="ratio">
-            <video
-              src="pxc_spec.mp4"
-              controls
-              preload="metadata"
-              poster="xem_poster.jpg"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 1:15</div>
-            <h3>PixelCrew — the crew, in motion</h3>
-            <p>
-              Their line: "the coordination isn't a spinner — it's the product."
-              Elena, Marcus, Mira, seven steps, 25–45 minutes from written brief
-              to production HTML. Their PH gallery: seven static screenshots.
-              This is the pipeline actually moving — every fact from their
-              public site, honestly labelled as a spec.
-            </p>
-          </div>
-        </div>
-        
-          <div class="meta">
-            <div class="tag">spec trailer · 1:15</div>
-            <h3>PixelCrew — the crew, in motion</h3>
-            <p>
-              Their line: "the coordination isn't a spinner — it's the product."
-              Elena, Marcus, Mira, seven steps, 25–45 minutes from written brief
-              to production HTML. Their PH gallery: seven static screenshots.
-              This is the pipeline actually moving — every fact from their
-              public site, honestly labelled as a spec.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="rc_spec.mp4"
-              controls
-              preload="metadata"
-              poster="rc_poster.png"
-            ></video>
-          </div>
-          <div class="meta">
-            <div class="tag">spec trailer · 0:49</div>
-            <h3>ResumeContext — coding agents that remember each other</h3>
-            <p>
-              Two real Claude Code sessions, one real MCP handoff: session A does
-              the work, session B — fresh, zero local context — asks the shared
-              memory and knows exactly what's next. Recorded live.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ratio">
-            <video
-              src="plane_spec.mp4"
-              controls
-              preload="metadata"
-              poster="plane_poster.png"
-            ></video>
-          </div>
           <div class="meta">
             <div class="tag">spec trailer · 1:03</div>
-            <h3>Plane — assign work to AI, like any teammate</h3>
+            <h3>2BA.AI — the install is the pitch (real run)</h3>
             <p>
-              Plane Agents on camera: fresh workspace, real Plane AI thread —
-              thoughts, questions, actions. The conversation loop is real.
-              Not commissioned — labelled as spec.
+              Their curl installer run end to end on my box: config card, pairing code
+              QFFV4THC on both ends, and a dry-run that found my Claude Code config
+              and left it untouched. Real output, re-typeset. $99 · 48h
             </p>
           </div>
         </div>
+
         <div class="card">
           <div class="ratio">
             <video
