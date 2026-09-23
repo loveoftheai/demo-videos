@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sample — docs↔ToS consistency audit (anonymized)</title>
+    <style>
+      body {
+        font:
+          16px/1.65 Georgia,
+          serif;
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 0 20px;
+        color: #1a1a1a;
+        background: #fdfdfb;
+      }
+      h1 {
+        font-size: 26px;
+        margin-bottom: 2px;
+      }
+      h2 {
+        font-size: 19px;
+        margin-top: 34px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+      }
+      .meta {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 28px;
+      }
+      .sev {
+        display: inline-block;
+        font:
+          600 12px/1 Arial,
+          sans-serif;
+        padding: 3px 8px;
+        border-radius: 3px;
+        color: #fff;
+        margin-right: 6px;
+      }
+      .major {
+        background: #b3261e;
+      }
+      .med {
+        background: #e8710a;
+      }
+      .minor {
+        background: #5f6368;
+      }
+      .finding {
+        margin: 18px 0;
+        padding: 14px 18px;
+        background: #fff;
+        border: 1px solid #e4e1d8;
+        border-left: 4px solid #b3261e;
+      }
+      .finding.med {
+        border-left-color: #e8710a;
+      }
+      .finding.minor {
+        border-left-color: #5f6368;
+      }
+      blockquote {
+        margin: 8px 0;
+        padding: 6px 14px;
+        border-left: 3px solid #c9c5b8;
+        color: #444;
+        background: #f6f5f0;
+        font-size: 14.5px;
+      }
+      code {
+        background: #f0efe9;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+      ul {
+        padding-left: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Documentation ↔ Terms-of-Service consistency audit</h1>
+    <div class="meta">
+      Sample report (anonymized) — structure and finding format as delivered ·
+      Product "M": an AI-email SaaS with an agent-wallet payments feature ·
+      September 2026
+    </div>
+
+    <h2>Scope &amp; sources</h2>
+    <p>
+      Five public surfaces cross-checked line-by-line against the two legal
+      documents (Terms of Service, Privacy Policy): homepage, pricing page, docs
+      index, product UI copy, navigation/footer claims. Every quote below was
+      verified against a captured page snapshot; clause numbers reference the
+      live ToS as of the audit date.
+    </p>
+
+    <h2>Findings</h2>
+
+    <div class="finding">
+      <b
+        >F1 <span class="sev major">MAJOR</span> Scope gap — flagship payments
+        feature has zero contractual coverage</b
+      >
+      <p>
+        The homepage and navigation market three payment capabilities (agent
+        wallet with spending rules, automatic refunds, a per-call paid
+        marketplace). The ToS service definition (§3) enumerates a dozen
+        features — <i>none</i> of them payments-related. §4 (Billing) covers
+        subscription billing only. Meanwhile §17 caps liability at the greater
+        of $100 or 12 months of fees — sitting directly under marketing that
+        promises funds "protection" — and §18 makes the customer indemnify the
+        company for acts of "your agents or automations."
+      </p>
+      <p>
+        <b>Reader impact:</b> an enterprise buyer's first legal review question
+        has no answer. The contract appears to predate the flagship feature.
+      </p>
+      <blockquote>
+        Recommended fix: add a payments/marketplace schedule defining funds
+        handling, refund conditions, liability carve-outs for agent-initiated
+        transactions, and disclosure of on-chain data categories in the Privacy
+        Policy.
+      </blockquote>
+    </div>
+
+    <div class="finding med">
+      <b
+        >F2 <span class="sev med">MEDIUM</span> Tension — pricing table vs.
+        compliance disclaimer</b
+      >
+      <p>
+        The pricing comparison table lists a SOC 2 report as "Available" on the
+        Enterprise tier — a report is an audit artifact, implying completed
+        audit. ToS §12 expressly disclaims being SOC 2 audited or attested
+        absent a signed agreement or published trust document. The two surfaces
+        point in opposite directions about the same fact; procurement treats
+        this as a red flag either way.
+      </p>
+      <blockquote>
+        Recommended fix: if a report exists, publish a trust document and update
+        §12; if not, change "Available" to "On roadmap" or scope it as
+        readiness-only.
+      </blockquote>
+    </div>
+
+    <div class="finding minor">
+      <b
+        >F3 <span class="sev minor">MINOR</span> Positioning tension —
+        "privacy-first" vs. disclosed retention</b
+      >
+      <p>
+        Homepage claims "privacy-first" and data minimization; the ToS banner
+        states the hosted service retains mailbox content and is not
+        zero-data-retention. The Privacy Policy is honest about retention, so
+        this is positioning tension rather than a contradiction — flagged for
+        awareness.
+      </p>
+    </div>
+
+    <h2>Verified-consistent items (included for credibility)</h2>
+    <ul>
+      <li>
+        AI-training carve-out (§9) — no conflicting claim found on docs or
+        pricing surfaces
+      </li>
+      <li>
+        GDPR-readiness language in ToS §12 and Privacy Policy — near-verbatim
+        aligned
+      </li>
+    </ul>
+
+    <h2>What a full report includes</h2>
+    <ul>
+      <li>
+        All findings with severity (major / medium / minor), evidence quotes,
+        and clause references
+      </li>
+      <li>
+        A "verified consistent" section so buyers can show auditors the check
+        was two-directional
+      </li>
+      <li>Recommended fix language per finding, ready for legal review</li>
+      <li>Page snapshots (timestamped) backing every quote</li>
+    </ul>
+
+    <p style="color: #666; font-size: 14px">
+      Delivered by loveoftheai — docs↔ToS consistency audits. Sample anonymized;
+      method, severity scale, and fix format identical to paid reports.
+    </p>
+  </body>
+</html>
