@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Sample 2 — docs↔ToS audit: autonomous agents under a 2023 contract
+    </title>
+    <style>
+      body {
+        font:
+          16px/1.65 Georgia,
+          serif;
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 0 20px;
+        color: #1a1a1a;
+        background: #fdfdfb;
+      }
+      h1 {
+        font-size: 26px;
+        margin-bottom: 2px;
+      }
+      h2 {
+        font-size: 19px;
+        margin-top: 34px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+      }
+      .meta {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 28px;
+      }
+      .sev {
+        display: inline-block;
+        font:
+          600 12px/1 Arial,
+          sans-serif;
+        padding: 3px 8px;
+        border-radius: 3px;
+        color: #fff;
+        margin-right: 6px;
+      }
+      .major {
+        background: #b3261e;
+      }
+      .med {
+        background: #e8710a;
+      }
+      .minor {
+        background: #5f6368;
+      }
+      .finding {
+        margin: 18px 0;
+        padding: 14px 18px;
+        background: #fff;
+        border: 1px solid #e4e1d8;
+        border-left: 4px solid #b3261e;
+      }
+      .finding.med {
+        border-left-color: #e8710a;
+      }
+      .finding.minor {
+        border-left-color: #5f6368;
+      }
+      blockquote {
+        margin: 8px 0;
+        padding: 6px 14px;
+        border-left: 3px solid #c9c5b8;
+        color: #444;
+        background: #f6f5f0;
+        font-size: 14.5px;
+      }
+      code {
+        background: #f0efe9;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+      ul {
+        padding-left: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The product became autonomous. The contract never followed.</h1>
+    <div class="meta">
+      Sample report 2 (anonymized) — finding format as delivered · Product "A":
+      an AI customer-service agent platform whose agents execute financial
+      actions · September 2026
+    </div>
+
+    <h2>Scope &amp; sources</h2>
+    <p>
+      Terms of Service, Privacy Policy, Data Processing Agreement, security /
+      trust page, and product marketing — fetched live and cross-checked
+      line-by-line. Every quote was verified against a timestamped capture;
+      clause references point at the live documents as of the audit date.
+    </p>
+
+    <h2>Findings</h2>
+
+    <div class="finding">
+      <b
+        >F1 <span class="sev major">MAJOR</span> The contract predates the
+        product</b
+      >
+      <p>
+        The ToS is dated early 2023 and describes the service as "a tool that
+        connects to your helpdesk software." The product sold today is a suite
+        of autonomous agents that — per the homepage — handle returns, refunds,
+        cancellations and subscription changes "end to end," with an automation
+        rate of "up to 89%." The contract framework (a generic cloud-SaaS
+        standard from 2023) contains no provisions on: the scope of autonomous
+        actions, AI output accuracy, human-in-the-loop routing, or liability for
+        agent-executed financial actions. A wrongly-issued refund falls into
+        generic warranty machinery and a cap of 12 months of fees — designed for
+        downtime, not autonomous money movement.
+      </p>
+      <blockquote>
+        Recommended fix: update the service definition; add an "Agent Actions"
+        section enumerating permitted autonomous actions (with ceilings), making
+        threshold routing and human escalation contractual, and deciding whether
+        agent-action liability sits inside or outside the general cap.
+      </blockquote>
+    </div>
+
+    <div class="finding">
+      <b
+        >F2 <span class="sev major">MAJOR</span> The safety mechanism is
+        marketing copy</b
+      >
+      <p>
+        The homepage promises: you set the confidence threshold, and anything
+        the agent can't handle "goes to your team with full context." For agents
+        that move money, this routing promise <i>is</i> the risk control — and
+        it appears nowhere in the ToS or DPA. If the behavior changed tomorrow,
+        no contract term would be breached.
+      </p>
+    </div>
+
+    <div class="finding">
+      <b
+        >F3 <span class="sev major">MAJOR</span> AI-improvement opt-out with no
+        contractual anchor</b
+      >
+      <p>
+        The security page states customer data may be used to improve the
+        vendor's AI models, with an opt-out "at any time" — on the same page
+        that says data use limits are "contractual, in our DPA." The DPA is
+        recent and well-built, but contains no AI-improvement or opt-out clause
+        at all. The promise customers rely on is not the contract they sign.
+      </p>
+      <blockquote>
+        Recommended fix: an "AI Improvement Use" addendum — default state,
+        scope, notice, and the opt-out as a contractual right.
+      </blockquote>
+    </div>
+
+    <div class="finding med">
+      <b
+        >F4 <span class="sev med">MEDIUM</span> Newest product line missing from
+        the privacy policy's data categories</b
+      >
+      <p>
+        A voice-AI product line is promoted in the site navigation, but the
+        Privacy Policy's enumerated categories (support interactions, order
+        data) never name call recordings or transcripts, and the DPA annex
+        declares no special-category data. The highest-sensitivity category the
+        company processes is the one the policy never mentions.
+      </p>
+    </div>
+
+    <h2>Verified-consistent items (included for credibility)</h2>
+    <ul>
+      <li>
+        DPA is genuinely strong and fresh: SCCs + UK Addendum, 72-hour incident
+        notice, audit rights, deletion at end of contract, public sub-processor
+        list
+      </li>
+      <li>SOC 2 Type II cited with the audit firm named — not a vague badge</li>
+      <li>
+        Session-recording analytics disclosed with field-masking and
+        iframe-isolation detail — unusually candid
+      </li>
+      <li>
+        The security page answers the AI-training question directly
+        (retrieval-only, "never modifies model weights") instead of dodging it
+      </li>
+    </ul>
+
+    <h2>Why this pattern matters in 2026</h2>
+    <p>
+      Agents that execute actions — refunds, cancellations, purchases — are
+      shipping under SaaS contracts drafted for dashboards. The gap is never
+      malicious; it's calendar drift: the roadmap moved to autonomous actions,
+      the paper didn't. It surfaces exactly when it costs most: the first
+      enterprise security review.
+    </p>
+
+    <p style="color: #666; font-size: 14px">
+      Delivered by loveoftheai — docs↔ToS consistency audits, $99 / 72h,
+      pay-after-delivery. Sample anonymized; method, severity scale, and fix
+      format identical to paid reports. See also
+      <a href="audit-sample.html"
+        >sample 1 — payments feature with zero contract coverage</a
+      >. Documentation review, not legal advice.
+    </p>
+  </body>
+</html>
